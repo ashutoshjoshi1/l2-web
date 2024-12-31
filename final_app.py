@@ -52,14 +52,15 @@ def list_items(base_url):
 
 # Initialize Dash app
 app = Dash(__name__)
-app.title = "Data Dashboard"
+app.title = "Data Dashboard : L2"
+server = app.server
 
 # Fetch initial list of locations
 locations = list_items(BASE_URL)
 
 # App layout
 app.layout = html.Div([
-    html.H1("Data Dashboard", style={"textAlign": "center"}),
+    html.H1("Data Visualization for L2", style={"textAlign": "center"}),
 
     html.Div([
         html.Label("Select Location:"),
