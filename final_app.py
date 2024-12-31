@@ -6,7 +6,6 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import io
-from index import app as flask_app
 
 # Base URL of the Caddy server
 BASE_URL = "https://data.ovh.pandonia-global-network.org/"
@@ -52,16 +51,16 @@ def list_items(base_url):
         return []
 
 # Initialize Dash app
-app = Dash(__name__, server=flask_app)
-app.title = "Data Dashboard : L2"
+app = Dash(__name__)
 server = app.server
+app.title = "Data Dashboard"
 
 # Fetch initial list of locations
 locations = list_items(BASE_URL)
 
 # App layout
 app.layout = html.Div([
-    html.H1("Data Visualization for L2", style={"textAlign": "center"}),
+    html.H1("Data Dashboard", style={"textAlign": "center"}),
 
     html.Div([
         html.Label("Select Location:"),
