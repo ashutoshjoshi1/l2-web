@@ -7,34 +7,8 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import io
 
-# Base URL of the Caddy server
 BASE_URL = "https://data.ovh.pandonia-global-network.org/"
 
-# Column names definition for the live data
-# column_names = [
-#     "Timestamp", "Fractional Days", "Effective Duration [s]", "Solar Zenith [deg]",
-#     "Solar Azimuth [deg]", "Lunar Zenith [deg]", "Lunar Azimuth [deg]", "Fitting Residual RMS",
-#     "Normalized RMS", "Expected RMS", "Expected Normalized RMS", "Station Pressure [mbar]",
-#     "Processing Type Index", "Calibration File Version", "Calibration Validity Start",
-#     "Mean Measured Value", "Effective Temp [°C]", "Residual Stray Light [%]",
-#     "Wavelength Shift [nm]", "Total Wavelength Shift [nm]", "Resolution Change [%]",
-#     "Integration Time [ms]", "Bright Cycles", "Filterwheel Position #1",
-#     "Filterwheel Position #2", "Atmospheric Variability [%]", "Aerosol Optical Depth Start",
-#     "Aerosol Optical Depth Center", "Aerosol Optical Depth End", "L1 Quality Flag",
-#     "L1 Data Quality Sum DQ1", "L1 Data Quality Sum DQ2", "L2 Fit Quality Flag",
-#     "L2 Fit Quality Sum DQ1", "L2 Fit Quality Sum DQ2", "L2 Ozone Quality Flag",
-#     "L2 Ozone Quality Sum DQ1", "L2 Ozone Quality Sum DQ2", "Ozone Vertical Column [mol/m^2]",
-#     "Ozone Uncertainty [mol/m^2]", "Ozone Structured Uncertainty [mol/m^2]",
-#     "Ozone Common Uncertainty [mol/m^2]", "Ozone Total Uncertainty [mol/m^2]",
-#     "Ozone RMS-based Uncertainty [mol/m^2]", "Ozone Effective Temp [K]",
-#     "Effective Temp Uncertainty [K]", "Structured Temp Uncertainty [K]",
-#     "Common Temp Uncertainty [K]", "Total Temp Uncertainty [K]",
-#     "Direct Air Mass Factor", "Air Mass Factor Uncertainty", "Diffuse Correction [%]",
-#     "Climatological NO2 Stratospheric Column [mol/m^2]",
-#     "Uncertainty of Climatological NO2 Stratospheric Column [mol/m^2]"
-# ]
-
-# Function to list folders/files in a directory
 def list_items(base_url):
     try:
         response = requests.get(base_url)
